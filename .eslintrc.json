@@ -27,5 +27,6 @@
     "object-curly-newline": "off",
     "max-len": ["error", { "code": 120, "comments": 120, "tabWidth": 2, "ignoreUrls": true }],
     "wc/guard-super-call": "off"
-  }
+  },
+  "ignorePatterns": ["locales.ts"]
 }
