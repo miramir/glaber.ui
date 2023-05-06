@@ -1,0 +1,41 @@
+{
+  "name": "glaber.ui",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest watch"
+  },
+  "dependencies": {
+    "@lit/localize": "^0.11.4",
+    "lit": "^2.7.3"
+  },
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.8.1",
+    "@lit/localize-tools": "^0.6.9",
+    "@open-wc/eslint-config": "^10.0.0",
+    "@open-wc/testing-helpers": "^2.2.1",
+    "@shoelace-style/shoelace": "^2.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
+    "@vitest/coverage-c8": "^0.31.0",
+    "eslint": "^8.39.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-lit": "^1.8.3",
+    "eslint-plugin-lit-a11y": "^2.4.1",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "happy-dom": "^9.10.9",
+    "husky": "^8.0.3",
+    "plop": "^3.1.2",
+    "rollup-plugin-copy": "^3.4.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.2",
+    "vite-plugin-static-copy": "^0.14.0",
+    "vitest": "^0.31.0"
+  }
+}

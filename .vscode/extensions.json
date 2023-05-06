@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "runem.lit-plugin",
+    "dbaeumer.vscode-eslint",
+    "bierner.lit-html",
+    "bashmish.es6-string-css",
+    "streetsidesoftware.code-spell-checker"
+  ],
+  "unwantedRecommendations": []
+}
