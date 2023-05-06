@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+<file target-language="ru" source-language="en" original="lit-localize-inputs" datatype="plaintext">
+<body>
+<trans-unit id="s31278fb2e3c52c5d">
+  <source>In maintenance</source>
+  <target>В обслуживании</target>
+</trans-unit>
+<trans-unit id="s965c503c3e42fdfe">
+  <source>Enabled</source>
+  <target>Активировано</target>
+</trans-unit>
+<trans-unit id="s66722bc2ea775e05">
+  <source>Disabled</source>
+  <target>Деактивировано</target>
+</trans-unit>
+<trans-unit id="sc592307ea80f16b9">
+  <source>Unknown</source>
+  <target>Не известно</target>
+</trans-unit>
+</body>
+</file>
+</xliff>

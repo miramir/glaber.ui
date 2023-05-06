@@ -1,6 +1,7 @@
 import { LitElement, html } from 'lit';
 import type { CSSResultGroup } from 'lit';
 import { property, customElement } from 'lit/decorators.js';
+import { msg, localized } from '@lit/localize';
 import styles from './host-admin-status.styles';
 
 const HOST_STATUS_MONITORED: Number = 0;
@@ -15,6 +16,7 @@ const HOST_MAINTENANCE_STATUS_ON: Number = 1;
  * @since 0.0.1
  */
 @customElement('glb-host-admin-status')
+@localized()
 export default class HostAdminStatus extends LitElement {
   static styles: CSSResultGroup = styles;
 
@@ -34,12 +36,12 @@ export default class HostAdminStatus extends LitElement {
     switch (status) {
       case HOST_STATUS_MONITORED:
         return maintenance === HOST_MAINTENANCE_STATUS_ON
-          ? { variant: 'warning', text: 'hoststatus.maintenance' }
-          : { variant: 'success', text: 'hoststatus.enabled' };
+          ? { variant: 'warning', text: msg('In maintenance') }
+          : { variant: 'success', text: msg('Enabled') };
       case HOST_STATUS_NOT_MONITORED:
-        return { variant: 'danger', text: 'hoststatus.disabled' };
+        return { variant: 'danger', text: msg('Disabled') };
       default:
-        return { variant: 'neutral', text: 'hoststatus.unknown' };
+        return { variant: 'neutral', text: msg('Unknown') };
     }
   }
 }
