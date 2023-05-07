@@ -7,6 +7,9 @@ import copy from 'rollup-plugin-copy';
 export default defineConfig({
   build: {
     manifest: true,
+    dynamicImportVarsOptions: {
+      exclude: ['./src/ui.ts'],
+    },
     rollupOptions: {
       // external: /^lit/,
       plugins: [

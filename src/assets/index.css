@@ -28,9 +28,37 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  flex-direction: row;
   min-width: 320px;
   min-height: 100vh;
+}
+
+aside, .wrapper {
+  box-sizing: border-box;
+}
+
+aside {
+  max-width: 256px;
+  width: 256px;
+}
+
+.wrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: auto;
+  position: relative;
+}
+
+header {
+  height: 45;
+  display: flex;
+  padding: 0 10px;
+  border-bottom: 1px solid var(--sl-color-neutral-300);
+}
+
+header, footer {
+  flex-shrink: 0;
 }
 
 @media (prefers-color-scheme: light) {
