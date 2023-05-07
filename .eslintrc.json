@@ -9,7 +9,8 @@
   },
   "extends": [
     "@open-wc",
-    "plugin:lit/recommended"
+    "plugin:lit/recommended",
+    "plugin:storybook/recommended"
   ],
   "overrides": [],
   "parserOptions": {
@@ -25,8 +26,18 @@
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
     "object-curly-newline": "off",
-    "max-len": ["error", { "code": 120, "comments": 120, "tabWidth": 2, "ignoreUrls": true }],
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "comments": 120,
+        "tabWidth": 2,
+        "ignoreUrls": true
+      }
+    ],
     "wc/guard-super-call": "off"
   },
-  "ignorePatterns": ["locales.ts"]
+  "ignorePatterns": [
+    "locales.ts"
+  ]
 }

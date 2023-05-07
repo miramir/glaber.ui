@@ -3,7 +3,6 @@ import { fixture, html } from '@open-wc/testing-helpers';
 import type { SlBadge } from '@shoelace-style/shoelace';
 import type HostAdminStatus from './host-admin-status';
 import './host-admin-status';
-import '@shoelace-style/shoelace/dist/components/badge/badge';
 
 describe('<glb-host-admin-status>', async () => {
   it('when provided no parameters', async () => {

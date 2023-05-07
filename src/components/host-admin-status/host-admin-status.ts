@@ -3,6 +3,7 @@ import type { CSSResultGroup } from 'lit';
 import { property, customElement } from 'lit/decorators.js';
 import { msg, localized } from '@lit/localize';
 import styles from './host-admin-status.styles';
+import '@shoelace-style/shoelace/dist/components/badge/badge';
 
 const HOST_STATUS_MONITORED: Number = 0;
 const HOST_STATUS_NOT_MONITORED: Number = 1;
