@@ -1,0 +1,11 @@
+import { describe, expect, it } from 'vitest';
+import { fixture, html } from '@open-wc/testing-helpers';
+import type {{ properCase tag }} from './{{ tag }}';
+import './{{ tag }}';
+
+describe('<glb-{{ tag }}>', () => {
+  it('should render a component', async () => {
+    const el = await fixture<{{ properCase tag }}>(html`<glb-{{ tag }}></glb-{{ tag }}>`);
+    expect(el.shadowRoot).toBeTruthy();
+  });
+});

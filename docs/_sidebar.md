@@ -1,8 +1,9 @@
-- С чего начать
+- Getting Started
 
-  - [Обзор](/)
+  - [Overview](/)
 
 - Components
 
   - [Host Admin Status](/components/host-admin-status)
+  - [Host Interfaces Status](/components/host-interfaces-status)
   <!--plop:component-->

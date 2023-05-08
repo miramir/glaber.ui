@@ -1,0 +1,9 @@
+type Glb{{ properCase name }}Event = CustomEvent<Record<PropertyKey, never>>;
+
+declare global {
+  interface GlobalEventHandlersEventMap {
+    'glb-{{ name }}': Glb{{ properCase name }}Event;
+  }
+}
+
+export default Glb{{ properCase name }}Event;

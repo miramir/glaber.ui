@@ -12,6 +12,7 @@ setLocale(document.querySelector('html')?.lang || 'en');
 setBasePath('src/assets');
 
 export { default as HostAdminStatus } from './components/host-admin-status/host-admin-status';
+export { default as HostInterfacesStatus } from './components/host-interfaces-status/host-interfaces-status';
 /* plop:component */
 
 /* plop:event */

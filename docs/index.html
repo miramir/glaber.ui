@@ -16,7 +16,11 @@
     window.$docsify = {
       name: 'Glaber.UI',
       repo: 'https://github.com/miramir/glaber.ui',
-      alias: [],
+      loadSidebar: true,
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md',
+      },
+      plugins: [],
     };
   </script>
   <script src="vendor/docsify.js"></script>

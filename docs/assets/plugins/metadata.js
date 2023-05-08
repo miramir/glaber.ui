@@ -218,7 +218,9 @@
         <td class="nowrap"><code>${escapeHtml(method.name)}()</code></td>
         <td>${escapeHtml(method.description)}</td>
         <td>${method.parameters?.length ? `
-            <code>${escapeHtml(method.parameters.map(param => `${param.name}: ${param.type?.text || ''}`).join(', '))}</code>
+            <code>
+            ${escapeHtml(method.parameters.map(param => `${param.name}: ${param.type?.text || ''}`).join(', '))}
+            </code>
           ` : '-'}
         </td>
       </tr>
