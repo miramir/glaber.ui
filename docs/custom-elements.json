@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/components/host-admin-status/host-admin-status.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "HostAdminStatus",
+          "name": "HostAdminStatus",
+          "members": [
+            {
+              "kind": "field",
+              "name": "status",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "Monitoring status",
+              "attribute": "status"
+            },
+            {
+              "kind": "field",
+              "name": "maintenance",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "Maintenance status",
+              "attribute": "maintenance"
+            },
+            {
+              "kind": "method",
+              "name": "presentAttr",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "{variant: string, text: string}"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "status",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "maintenance",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "name": "status",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "Monitoring status",
+              "fieldName": "status"
+            },
+            {
+              "name": "maintenance",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "Maintenance status",
+              "fieldName": "maintenance"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "glb-host-admin-status",
+          "summary": "Used for show administrative status for host",
+          "status": "stable",
+          "since": "0.0.1",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "HostAdminStatus",
+            "module": "src/components/host-admin-status/host-admin-status.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "glb-host-admin-status",
+          "declaration": {
+            "name": "HostAdminStatus",
+            "module": "src/components/host-admin-status/host-admin-status.ts"
+          }
+        }
+      ]
+    }
+  ],
+  "package": {
+    "name": "glaber.ui",
+    "version": "0.0.1"
+  }
+}
