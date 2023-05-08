@@ -9,8 +9,7 @@
   },
   "extends": [
     "@open-wc",
-    "plugin:lit/recommended",
-    "plugin:storybook/recommended"
+    "plugin:lit/recommended"
   ],
   "overrides": [],
   "parserOptions": {
