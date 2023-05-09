@@ -3,7 +3,7 @@
 /* eslint-disable no-restricted-globals */
 /* @todo Доделать генерацию отображения мета информации компонентов */
 (() => {
-  const customElements = fetch('/custom-elements.json')
+  const customElements = fetch('custom-elements.json')
     .then(res => res.json())
     .catch(err => console.error(err));
 
