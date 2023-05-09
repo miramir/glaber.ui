@@ -11,9 +11,7 @@ const { setLocale } = configureLocalization({
 setLocale(document.querySelector('html')?.lang || 'en');
 setBasePath('src/assets');
 
-export { default as SlTooltip } from '@shoelace-style/shoelace/dist/components/tooltip/tooltip';
-export { default as SlBadge } from '@shoelace-style/shoelace/dist/components/badge/badge';
-export { default as SlIcon } from '@shoelace-style/shoelace/dist/components/icon/icon';
+export { SlTooltip, SlBadge, SlIcon } from '@shoelace-style/shoelace';
 
 export { default as HostAdminStatus } from './components/host-admin-status/host-admin-status';
 export { default as HostInterfacesStatus } from './components/host-interfaces-status/host-interfaces-status';
