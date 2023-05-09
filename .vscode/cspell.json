@@ -1,6 +1,9 @@
 {
   "language": "en,ru",
-  "words": [],
+  "allowCompoundWords": true,
+  "words": [
+    "Docsify"
+  ],
   // Specify paths/files to ignore.
   "ignorePaths": [
     "node_modules", // this will ignore anything the node_modules directory
