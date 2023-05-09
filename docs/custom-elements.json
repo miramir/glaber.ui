@@ -4,6 +4,85 @@
   "modules": [
     {
       "kind": "javascript-module",
+      "path": "src/glaber.ui.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SlTooltip",
+          "declaration": {
+            "name": "SlTooltip",
+            "package": "@shoelace-style/shoelace"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "SlInput",
+          "declaration": {
+            "name": "SlInput",
+            "package": "@shoelace-style/shoelace"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "SlSelect",
+          "declaration": {
+            "name": "SlSelect",
+            "package": "@shoelace-style/shoelace"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "HostAdminStatus",
+          "declaration": {
+            "name": "default",
+            "module": "./components/host-admin-status/host-admin-status"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "HostInterfacesStatus",
+          "declaration": {
+            "name": "default",
+            "module": "./components/host-interfaces-status/host-interfaces-status"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Icon",
+          "declaration": {
+            "name": "default",
+            "module": "./components/icon/icon"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Badge",
+          "declaration": {
+            "name": "default",
+            "module": "./components/badge/badge"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "GlbLoadEvent",
+          "declaration": {
+            "name": "default",
+            "module": "./events/glb-load"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "GlbErrorEvent",
+          "declaration": {
+            "name": "default",
+            "module": "./events/glb-error"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/events/glb-error.ts",
       "declarations": [],
       "exports": [
@@ -113,6 +192,143 @@
           "declaration": {
             "name": "getBasePath",
             "module": "src/utilities/base-path.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/utilities/icon-library.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "registerIconLibrary",
+          "declaration": {
+            "name": "registerIconLibrary",
+            "module": "../components/icon/library"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "unregisterIconLibrary",
+          "declaration": {
+            "name": "unregisterIconLibrary",
+            "module": "../components/icon/library"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/badge/badge.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Badges are used to draw attention and display statuses or counts.",
+          "name": "Badge",
+          "cssParts": [
+            {
+              "description": "The component's base wrapper.",
+              "name": "base"
+            }
+          ],
+          "slots": [
+            {
+              "description": "The badge's content.",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "'primary' | 'success' | 'neutral' | 'warning' | 'danger'"
+              },
+              "default": "'primary'",
+              "description": "The badge's theme variant.",
+              "attribute": "variant",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "pill",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Draws a pill-style badge with rounded edges.",
+              "attribute": "pill",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "pulse",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Makes the badge pulsate to draw attention.",
+              "attribute": "pulse",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "name": "variant",
+              "type": {
+                "text": "'primary' | 'success' | 'neutral' | 'warning' | 'danger'"
+              },
+              "default": "'primary'",
+              "description": "The badge's theme variant.",
+              "fieldName": "variant"
+            },
+            {
+              "name": "pill",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Draws a pill-style badge with rounded edges.",
+              "fieldName": "pill"
+            },
+            {
+              "name": "pulse",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Makes the badge pulsate to draw attention.",
+              "fieldName": "pulse"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "glb-badge",
+          "documentation": "none",
+          "status": "stable",
+          "since": "0.0.1",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Badge",
+            "module": "src/components/badge/badge.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "glb-badge",
+          "declaration": {
+            "name": "Badge",
+            "module": "src/components/badge/badge.ts"
           }
         }
       ]
@@ -408,11 +624,11 @@
           "events": [
             {
               "description": "Emitted when the icon has loaded.",
-              "name": "sl-load"
+              "name": "glb-load"
             },
             {
               "description": "Emitted when the icon fails to load due to an error.",
-              "name": "sl-error"
+              "name": "glb-error"
             }
           ],
           "attributes": [

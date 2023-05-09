@@ -1,15 +1,18 @@
 /// <reference types="vitest" />
 import { defineConfig } from 'vite';
-import * as path from 'path';
-import copy from 'rollup-plugin-copy';
-
-const configOutputForDocs = {
-  entryFileNames: 'assets/[name].js',
-  chunkFileNames: 'assets/[name].js',
-  assetFileNames: 'assets/[name].[ext]',
-};
+import { resolve } from 'path';
 
 const isDocTarget = (typeof process.env.FOR_DOCS !== 'undefined');
+
+// const configOutput = isDocTarget ? {
+//   entryFileNames: '[name].js',
+//   chunkFileNames: '[name].js',
+//   assetFileNames: '[name].[ext]',
+// } : {
+//   entryFileNames: '[name]-[hash].js',
+//   chunkFileNames: '[name]-[hash].js',
+//   assetFileNames: '[name]-[hash].[ext]',
+// };
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -17,23 +20,23 @@ export default defineConfig({
     outDir: isDocTarget ? 'docs/dist' : 'dist',
     manifest: true,
     dynamicImportVarsOptions: {
-      exclude: ['./src/ui.ts'],
+      exclude: ['./src/glaber.ui.ts'],
+    },
+    lib: {
+      entry: {
+        'glaber.ui': resolve(__dirname, 'src/glaber.ui.ts'),
+        'utilities/icon-library': resolve(__dirname, 'src/utilities/icon-library.ts'),
+      },
+      formats: ['es'],
     },
     rollupOptions: {
       // external: /^lit/,
-      plugins: [
-        copy({
-          targets: [
-            {
-              src: path.resolve(__dirname, 'node_modules/@shoelace-style/shoelace/dist/assets/icons'),
-              dest: path.resolve(__dirname, 'dist/assets'),
-            },
-          ],
-          // https://github.com/vitejs/vite/issues/1231
-          hook: 'writeBundle',
-        }),
-      ],
-      output: isDocTarget ? configOutputForDocs : {},
+      plugins: [],
+      // input: {
+      //   'glaber.ui': resolve(__dirname, 'index.html'),
+      //   'utilities/icon-library': resolve(__dirname, 'src/utilities/icon-library.ts'),
+      // },
+      // output: configOutput,
     },
   },
   test: {

@@ -7,9 +7,9 @@
   <meta name="description" content="Development documentation for Glaber.UI">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="/vendor/themes/vue.css">
-  <link rel="stylesheet" href="/dist/assets/index.css">
+  <link rel="stylesheet" href="/dist/style.css">
   <link rel="stylesheet" href="/assets/plugins/code-block/code-block.css">
-  <script type="module" src="/dist/assets/index.js" data-glaberui="/dist" data-shoelace="/dist"></script>
+  <script type="module" src="/dist/glaber.ui.js" data-glaberui="/dist" data-shoelace="/dist"></script>
 </head>
 <body>
   <div id="app"></div>
@@ -22,6 +22,13 @@
         '/.*/_sidebar.md': '/_sidebar.md',
       },
       plugins: [],
+      executeScript: true,
+      pagination: {
+        previousText: 'Previous',
+        nextText: 'Next',
+        crossChapter: true,
+        crossChapterText: false,
+      },
     };
   </script>
   <script src="/vendor/docsify.js"></script>
