@@ -151,7 +151,7 @@
   width: 100%;
   color: var(--sl-color-neutral-600);
   cursor: pointer;
-  -webkit-appearance: none;
+  appearance: none;
 }
 
 .code-block__toggle svg {
