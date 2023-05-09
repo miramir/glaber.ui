@@ -1,3 +1,4 @@
+<!-- eslint-disable no-restricted-globals -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +18,7 @@
     window.$docsify = {
       name: 'Glaber.UI',
       repo: 'https://github.com/miramir/glaber.ui',
+      basePath: document.location.hostname === 'localhost' ? '/' : '/glaber.ui/',
       loadSidebar: true,
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md',
