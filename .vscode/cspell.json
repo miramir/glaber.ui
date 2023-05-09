@@ -2,7 +2,9 @@
   "language": "en,ru",
   "allowCompoundWords": true,
   "words": [
-    "Docsify"
+    "Docsify",
+    "glaber",
+    "glaberui"
   ],
   // Specify paths/files to ignore.
   "ignorePaths": [

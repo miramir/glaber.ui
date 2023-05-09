@@ -92,7 +92,7 @@ export default function (plop) {
         path: '../../src/ui.ts',
         pattern: /\/\* plop:event \*\//,
         // eslint-disable-next-line max-len
-        template: `export { default as Glb{{ properCase name }}Event } from './events/glb-{{ name }}';\n/* plop:event */`,
+        template: `export type { default as Glb{{ properCase name }}Event } from './events/glb-{{ name }}';\n/* plop:event */`,
       },
     ],
   });

@@ -4,6 +4,121 @@
   "modules": [
     {
       "kind": "javascript-module",
+      "path": "src/events/glb-error.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "GlbErrorEvent",
+            "module": "src/events/glb-error.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/events/glb-load.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "GlbLoadEvent",
+            "module": "src/events/glb-load.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/internal/watch.ts",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "watch",
+          "parameters": [
+            {
+              "name": "propertyName",
+              "type": {
+                "text": "string | string[]"
+              }
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": {
+                "text": "WatchOptions"
+              }
+            }
+          ],
+          "description": "Runs when observed properties change, e.g. @property or @state, but before the component updates. To wait for an\nupdate to complete after a change occurs, use `await this.updateComplete` in the handler. To start watching after the\ninitial update/render, use `{ waitUntilFirstUpdate: true }` or `this.hasUpdated` in the handler.\n\nUsage:"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "watch",
+          "declaration": {
+            "name": "watch",
+            "module": "src/internal/watch.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/utilities/base-path.ts",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "setBasePath",
+          "parameters": [
+            {
+              "name": "path",
+              "type": {
+                "text": "string"
+              }
+            }
+          ],
+          "description": "Sets the library's base path to the specified directory."
+        },
+        {
+          "kind": "function",
+          "name": "getBasePath",
+          "parameters": [
+            {
+              "name": "subpath",
+              "default": "''",
+              "description": "An optional path to append to the base path."
+            }
+          ],
+          "description": "Gets the library's base path.\n\nThe base path is used to load assets such as icons and images, so it needs to be set for components to work properly.\nBy default, this script will look for a script ending in glaber.ui.js and set the base path\nto the directory that contains that file. To override this behavior, you can add the data-glaberui attribute to any\nscript on the page (it probably makes the most sense to attach it to the Glaber.UI script, but it could also be on a\nbundle). The value can be a local folder or it can point to a CORS-enabled endpoint such as a CDN.\n\n  <script src=\"bundle.js\" data-glaberui=\"/custom/base/path\"></script>\n\nAlternatively, you can set the base path manually using the exported setBasePath() function."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "setBasePath",
+          "declaration": {
+            "name": "setBasePath",
+            "module": "src/utilities/base-path.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getBasePath",
+          "declaration": {
+            "name": "getBasePath",
+            "module": "src/utilities/base-path.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/host-admin-status/host-admin-status.ts",
       "declarations": [
         {
@@ -188,6 +303,348 @@
           "declaration": {
             "name": "HostInterfacesStatus",
             "module": "src/components/host-interfaces-status/host-interfaces-status.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/icon/icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Icons are symbols that can be used to represent various options within an application.",
+          "name": "Icon",
+          "cssParts": [
+            {
+              "description": "The internal SVG element.",
+              "name": "svg"
+            }
+          ],
+          "members": [
+            {
+              "kind": "method",
+              "name": "resolveIcon",
+              "privacy": "private",
+              "static": true,
+              "return": {
+                "type": {
+                  "text": "Promise<SVGResult>"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "url",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Given a URL, this function returns the resulting SVG element or an appropriate error symbol."
+            },
+            {
+              "kind": "field",
+              "name": "svg",
+              "type": {
+                "text": "SVGElement | null"
+              },
+              "privacy": "private",
+              "default": "null"
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The name of the icon to draw. Available names depend on the icon library being used.",
+              "attribute": "name",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "src",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "An external URL of an SVG file. Be sure you trust the content you are including, as it will be executed as code and\ncan result in XSS attacks.",
+              "attribute": "src"
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "An alternate description to use for assistive devices. If omitted, the icon will be considered presentational and\nignored by assistive devices.",
+              "attribute": "label"
+            },
+            {
+              "kind": "field",
+              "name": "library",
+              "type": {
+                "text": "string"
+              },
+              "default": "'default'",
+              "description": "The name of a registered custom icon library.",
+              "attribute": "library",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "getUrl",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleLabelChange"
+            },
+            {
+              "kind": "method",
+              "name": "setIcon"
+            }
+          ],
+          "events": [
+            {
+              "description": "Emitted when the icon has loaded.",
+              "name": "sl-load"
+            },
+            {
+              "description": "Emitted when the icon fails to load due to an error.",
+              "name": "sl-error"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "name",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The name of the icon to draw. Available names depend on the icon library being used.",
+              "fieldName": "name"
+            },
+            {
+              "name": "src",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "An external URL of an SVG file. Be sure you trust the content you are including, as it will be executed as code and\ncan result in XSS attacks.",
+              "fieldName": "src"
+            },
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "An alternate description to use for assistive devices. If omitted, the icon will be considered presentational and\nignored by assistive devices.",
+              "fieldName": "label"
+            },
+            {
+              "name": "library",
+              "type": {
+                "text": "string"
+              },
+              "default": "'default'",
+              "description": "The name of a registered custom icon library.",
+              "fieldName": "library"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "glb-icon",
+          "documentation": "none",
+          "status": "stable",
+          "since": "0.0.1",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Icon",
+            "module": "src/components/icon/icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "glb-icon",
+          "declaration": {
+            "name": "Icon",
+            "module": "src/components/icon/icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/icon/library.default.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "library",
+          "type": {
+            "text": "IconLibrary"
+          },
+          "default": "{\n  name: 'default',\n  resolver: name => getBasePath(`assets/icons/${name}.svg`),\n}"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "library",
+            "module": "src/components/icon/library.default.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/icon/library.system.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "systemLibrary",
+          "type": {
+            "text": "IconLibrary"
+          },
+          "default": "{\n  name: 'system',\n  resolver: (name: keyof typeof icons) => {\n    if (name in icons) {\n      return `data:image/svg+xml,${encodeURIComponent(icons[name])}`;\n    }\n    return '';\n  },\n}"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "systemLibrary",
+            "module": "src/components/icon/library.system.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/icon/library.ts",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "watchIcon",
+          "parameters": [
+            {
+              "name": "icon",
+              "type": {
+                "text": "Icon"
+              }
+            }
+          ],
+          "description": "Adds an icon to the list of watched icons."
+        },
+        {
+          "kind": "function",
+          "name": "unwatchIcon",
+          "parameters": [
+            {
+              "name": "icon",
+              "type": {
+                "text": "Icon"
+              }
+            }
+          ],
+          "description": "Removes an icon from the list of watched icons."
+        },
+        {
+          "kind": "function",
+          "name": "getIconLibrary",
+          "parameters": [
+            {
+              "name": "name",
+              "optional": true,
+              "type": {
+                "text": "string"
+              }
+            }
+          ],
+          "description": "Returns a library from the registry."
+        },
+        {
+          "kind": "function",
+          "name": "unregisterIconLibrary",
+          "parameters": [
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              }
+            }
+          ],
+          "description": "Removes an icon library from the registry."
+        },
+        {
+          "kind": "function",
+          "name": "registerIconLibrary",
+          "parameters": [
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "options",
+              "type": {
+                "text": "{ resolver: IconLibraryResolver; mutator?: IconLibraryMutator }"
+              }
+            }
+          ],
+          "description": "Adds an icon library to the registry, or overrides an existing one."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "watchIcon",
+          "declaration": {
+            "name": "watchIcon",
+            "module": "src/components/icon/library.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "unwatchIcon",
+          "declaration": {
+            "name": "unwatchIcon",
+            "module": "src/components/icon/library.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getIconLibrary",
+          "declaration": {
+            "name": "getIconLibrary",
+            "module": "src/components/icon/library.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "unregisterIconLibrary",
+          "declaration": {
+            "name": "unregisterIconLibrary",
+            "module": "src/components/icon/library.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "registerIconLibrary",
+          "declaration": {
+            "name": "registerIconLibrary",
+            "module": "src/components/icon/library.ts"
           }
         }
       ]

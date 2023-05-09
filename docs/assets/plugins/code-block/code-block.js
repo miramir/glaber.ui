@@ -41,7 +41,7 @@
               <div class="code-block__preview">
                 ${code.textContent}
                 <div class="code-block__resizer">
-                  <sl-icon name="grip-vertical"></sl-icon>
+                  <glb-icon name="grip-vertical"></glb-icon>
                 </div>
               </div>
 

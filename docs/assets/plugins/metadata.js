@@ -60,7 +60,9 @@
       <tr>
         <td><code class="nowrap">${escapeHtml(prop.name)}</code>${attributeInfo}</td>
         <td>${escapeHtml(prop.description)}</td>
-        <td style="text-align: center;">${prop.reflects ? '<sl-icon label="yes" name="check-lg"></sl-icon>' : ''}</td>
+        <td style="text-align: center;">
+          ${prop.reflects ? '<glb-icon label="yes" name="check-lg"></glb-icon>' : ''}
+        </td>
         <td>${prop.type?.text ? `<code>${escapeHtml(prop.type?.text || '')}</code>` : '-'}</td>
         <td>${prop.default ? `<code>${escapeHtml(prop.default)}</code>` : '-'}</td>
       </tr>
