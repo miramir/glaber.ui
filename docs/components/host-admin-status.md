@@ -4,7 +4,7 @@
 
 ## Использование
 
-```html
+```html preview
 <glb-host-admin-status status="1" maintenance="0"></glb-host-admin-status>
 ```
 

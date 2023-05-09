@@ -51,9 +51,9 @@
     } else if (isAttributeDifferent) {
       attributeInfo = `
         <br>
-        <glb-tooltip content="This attribute is different from its property">
+        <sl-tooltip content="This attribute is different from its property">
           <small><code class="nowrap">${escapeHtml(prop.attribute)}</code></small>
-        </glb-tooltip>`;
+        </sl-tooltip>`;
     }
 
     return `
@@ -197,11 +197,11 @@
     const table = document.createElement('table');
     table.classList.add('metadata-table');
     table.innerHTML = `
-      <thead><tr><th data-flavor="html">Name</th><th>Description</th><th>Event Detail</th></tr></thead>
+      <thead><tr><th>Name</th><th>Description</th><th>Event Detail</th></tr></thead>
       <tbody>
         ${events.map(event => `
               <tr>
-                <td data-flavor="html"><code class="nowrap">${escapeHtml(event.name)}</code></td>
+                <td><code class="nowrap">${escapeHtml(event.name)}</code></td>
                 <td>${escapeHtml(event.description)}</td>
                 <td>${event.type?.text ? `<code>${escapeHtml(event.type?.text)}` : '-'}</td>
               </tr>
@@ -254,9 +254,6 @@
       version.classList.add('sidebar-version');
       version.textContent = `v${metadata.package.version}`;
       target.appendChild(version);
-
-      // Store version for reuse
-      sessionStorage.setItem('sl-version', metadata.package.version);
     });
 
     hook.beforeEach(async (content, next) => {
@@ -288,8 +285,8 @@
           <div class="component-header">
             <div class="component-header__tag">
               <code>&lt;${component.tagName}&gt; | ${component.title ?? component.name}</code>
-              <glb-badge>Since ${component.since || '?'}</glb-badge>
-              <glb-badge variant="${badgeType}" style="text-transform: capitalize;">${component.status}</glb-badge>
+              <sl-badge>Since ${component.since || '?'}</sl-badge>
+              <sl-badge variant="${badgeType}" style="text-transform: capitalize;">${component.status}</sl-badge>
             </div>
 
             <div class="component-header__summary">${component.summary ? component.summary : ''}</div>

@@ -12,7 +12,6 @@
 # TODO
 
 * Инфраструктурные моменты:
-  * Настроить в документации отображение компонентов
   * Настроить отображение документации на [ghpages](https://pages.github.com/)
   * ...
 * Компоненты:
@@ -20,3 +19,7 @@
   * HostProblemsStatus
   * HostNavigation
   * ...
+* Перенести компоненты из shoelace-style, для уменьшения зависимостей
+  * SlTooltip
+  * SlBadge
+  * SlIcon
