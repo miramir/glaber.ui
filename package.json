@@ -3,10 +3,14 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
+  "files": [
+    "dist/*",
+    "README.md"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc --project tsconfig.prod.json && vite build",
-    "build:forDocs": "tsc --project tsconfig.prod.json && FOR_DOCS=true vite build",
+    "build:forDocs": "npm run analyze && tsc --project tsconfig.prod.json && FOR_DOCS=true vite build",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest watch",
@@ -17,7 +21,7 @@
     "localize:extract": "lit-localize extract",
     "localize:build": "lit-localize build",
     "analyze": "cem analyze",
-    "docs": "npm run analyze && npm run build:forDocs && docsify serve docs",
+    "docs": "npm run build:forDocs && docsify serve docs",
     "create": "plop --plopfile scripts/plop/plopfile.js",
     "make:icons": "node scripts/make-icons.js --outdir public"
   },
