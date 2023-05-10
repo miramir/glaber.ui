@@ -4,12 +4,15 @@
 //
 import commandLineArgs from 'command-line-args';
 import copy from 'recursive-copy';
-import download from 'download';
+// import download from 'download';
 import fm from 'front-matter';
 import { readFileSync, mkdirSync } from 'fs';
 import { stat, readFile, writeFile, rm } from 'fs/promises';
+import { promisify } from 'util';
+import { pipeline } from 'stream';
 import { glob } from 'glob';
 import path from 'path';
+import { Extract } from 'unzipper';
 
 const { outdir } = commandLineArgs({ name: 'outdir', type: String });
 const iconDir = path.join(outdir, '/assets/icons');
@@ -29,7 +32,17 @@ let numIcons = 0;
     } catch {
       // Download the source from GitHub (since not everything is published to NPM)
       console.log(`Downloading and extracting Bootstrap Icons ${version} 📦`);
-      await download(url, './.cache/icons', { extract: true });
+      // await download(url, './.cache/icons', { extract: true });
+      try {
+        const streamPipeline = promisify(pipeline);
+        const response = await fetch(url);
+
+        if (response.ok) {
+          await streamPipeline(response.body, Extract({ path: './.cache/icons' }));
+        }
+      } catch (error) {
+        console.error(error);
+      }
     }
 
     // Copy icons

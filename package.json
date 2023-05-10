@@ -40,7 +40,6 @@
     "@vitest/coverage-c8": "^0.31.0",
     "bootstrap-icons": "^1.10.5",
     "docsify-cli": "^4.4.4",
-    "download": "^8.0.0",
     "eslint": "^8.40.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-lit": "^1.8.3",
@@ -55,6 +54,7 @@
     "recursive-copy": "^2.0.14",
     "rollup-plugin-copy": "^3.4.0",
     "typescript": "^5.0.2",
+    "unzipper": "^0.10.14",
     "vite": "^4.3.5",
     "vite-plugin-static-copy": "^0.14.0",
     "vitest": "^0.31.0"

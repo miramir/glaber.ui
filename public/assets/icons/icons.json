@@ -7622,17 +7622,7 @@
     ]
   },
   {
-    "name": "node-plus-fill",
-    "title": "Node plus fill",
-    "categories": [
-      "Graphics"
-    ],
-    "tags": [
-      "add",
-      "new",
-      "node",
-      "diagram"
-    ]
+    "name": "node-plus-fill"
   },
   {
     "name": "node-minus",
@@ -12437,15 +12427,7 @@
     ]
   },
   {
-    "name": "file-image",
-    "title": "File image",
-    "categories": [
-      "Files and folders"
-    ],
-    "tags": [
-      "photo",
-      "picture"
-    ]
+    "name": "file-image"
   },
   {
     "name": "file-image-fill",
@@ -23109,15 +23091,7 @@
     ]
   },
   {
-    "name": "7-circle",
-    "title": "7 circle",
-    "categories": [
-      "Shapes"
-    ],
-    "tags": [
-      "number",
-      "numeral"
-    ]
+    "name": "7-circle"
   },
   {
     "name": "7-circle-fill",
