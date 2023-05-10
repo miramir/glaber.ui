@@ -231,7 +231,7 @@ If you want to change the icons Glaber.UI uses internally, you can register an i
     requestAnimationFrame(() => tooltip.dispatchEvent(new MouseEvent('mouseover')));
   }
 
-  fetch('/dist/assets/icons/icons.json')
+  fetch('dist/assets/icons/icons.json')
     .then(res => res.json())
     .then(icons => {
       const container = document.querySelector('.icon-search');
