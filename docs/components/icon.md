@@ -117,7 +117,7 @@ Here's an example that registers an icon library located in the `/assets/icons` 
 
 ```html
 <script type="module">
-  import { registerIconLibrary } from '/dist/utilities/icon-library.js';
+  import { registerIconLibrary } from './dist/utilities/icon-library.js';
 
   registerIconLibrary('my-icons', {
     resolver: name => `/assets/icons/${name}.svg`,
@@ -145,7 +145,7 @@ Icons in this library are licensed under the [Font Awesome Free License](https:/
 
 ```html preview
 <script type="module">
-  import { registerIconLibrary } from '/dist/utilities/icon-library.js';
+  import { registerIconLibrary } from './dist/utilities/icon-library.js';
 
   registerIconLibrary('fa', {
     resolver: name => {
@@ -191,7 +191,7 @@ This example will load the same set of icons from the jsDelivr CDN instead of yo
 
 ```html
 <script type="module">
-  import { registerIconLibrary } from '/dist/utilities/icon-library.js';
+  import { registerIconLibrary } from './dist/utilities/icon-library.js';
 
   registerIconLibrary('default', {
     resolver: name => `https://cdn.jsdelivr.net/npm/bootstrap-icons@1.0.0/icons/${name}.svg`
@@ -207,7 +207,7 @@ If you want to change the icons Glaber.UI uses internally, you can register an i
 
 ```html
 <script type="module">
-  import { registerIconLibrary } from '/dist/utilities/icon-library.js';
+  import { registerIconLibrary } from './dist/utilities/icon-library.js';
 
   registerIconLibrary('system', {
     resolver: name => `/path/to/custom/icons/${name}.svg`
@@ -217,7 +217,6 @@ If you want to change the icons Glaber.UI uses internally, you can register an i
 
 <!-- Supporting scripts and styles for the search utility -->
 <script>
-  console.log('test');
   function wrapWithTooltip(item) {
     const tooltip = document.createElement('sl-tooltip');
     tooltip.content = item.getAttribute('data-name');
@@ -251,7 +250,7 @@ If you want to change the icons Glaber.UI uses internally, you can register an i
         item.setAttribute('data-terms', [i.name, i.title, ...(i.tags || []), ...(i.categories || [])].join(' '));
         item.innerHTML = `
           <svg width="1em" height="1em" fill="currentColor">
-            <use xlink:href="/assets/icons/sprite.svg#${i.name}"></use>
+            <use xlink:href="assets/icons/sprite.svg#${i.name}"></use>
           </svg>
         `;
         list.appendChild(item);
