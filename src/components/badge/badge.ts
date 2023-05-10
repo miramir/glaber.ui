@@ -7,7 +7,7 @@ import styles from './badge.styles';
 /**
  * Badges are used to draw attention and display statuses or counts.
  *
- * @documentation none
+ * @documentation https://miramir.github.io/glaber.ui/#/components/badge
  * @tag glb-badge
  * @status stable
  * @since 0.0.1

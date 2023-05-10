@@ -1,6 +1,6 @@
 import { test, describe, expect, expectTypeOf, it } from 'vitest';
 import { fixture, html } from '@open-wc/testing-helpers';
-import type { SlBadge } from '@shoelace-style/shoelace';
+import type Badge from '../badge/badge';
 import type HostAdminStatus from './host-admin-status';
 import './host-admin-status';
 
@@ -12,8 +12,8 @@ describe('<glb-host-admin-status>', async () => {
 
     expect(el).toBeTruthy();
 
-    const child = el.renderRoot.querySelector<SlBadge>('sl-badge')!;
-    expectTypeOf(child).toEqualTypeOf<SlBadge>();
+    const child = el.renderRoot.querySelector<Badge>('glb-badge')!;
+    expectTypeOf(child).toEqualTypeOf<Badge>();
     expect(child.textContent).toBe('Enabled');
     expect(child.variant).toBe('success');
   });
@@ -31,7 +31,7 @@ describe('<glb-host-admin-status>', async () => {
         html`<glb-host-admin-status status=${status} maintenance=${maintenance}></glb-host-admin-status>`,
       );
 
-      const child = el.renderRoot.querySelector<SlBadge>('sl-badge')!;
+      const child = el.renderRoot.querySelector<Badge>('glb-badge')!;
       expect(child.textContent).toBe(expectedText);
       expect(child.variant).toBe(expectedVariant);
     },

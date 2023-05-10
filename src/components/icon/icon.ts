@@ -14,7 +14,8 @@ const iconCache = new Map<string, Promise<SVGResult>>();
 
 /**
  * Icons are symbols that can be used to represent various options within an application.
- * @documentation none
+ *
+ * @documentation https://miramir.github.io/glaber.ui/#/components/badge
  * @tag glb-icon
  * @status stable
  * @since 0.0.1

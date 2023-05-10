@@ -3,7 +3,7 @@ import type { CSSResultGroup } from 'lit';
 import { property, customElement } from 'lit/decorators.js';
 import { msg, localized } from '@lit/localize';
 import styles from './host-admin-status.styles';
-import '@shoelace-style/shoelace/dist/components/badge/badge';
+import '../badge/badge';
 
 const HOST_STATUS_MONITORED: Number = 0;
 const HOST_STATUS_NOT_MONITORED: Number = 1;
@@ -30,7 +30,7 @@ export default class HostAdminStatus extends LitElement {
   override render() {
     const attrs = this.presentAttr(this.status, this.maintenance);
 
-    return html`<sl-badge variant="${attrs.variant}">${attrs.text}</sl-badge>`;
+    return html`<glb-badge variant="${attrs.variant}">${attrs.text}</glb-badge>`;
   }
 
   private presentAttr(status:number, maintenance: number): {variant: string, text: string} {
